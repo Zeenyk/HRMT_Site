@@ -1,0 +1,23 @@
+@font-face {
+    font-family: Consolas;
+    src: url("CONSOLA.TTF");
+}
+
+*{
+    color: white;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: black;
+    font-size: 3rem;
+    font-family: Consolas;
+}
+
+.title span {
+    display: inline-block;
+    min-width: 1ch;
+}

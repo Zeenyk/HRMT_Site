@@ -11,7 +11,7 @@ function glitchEffect(word, duration = 1000) {
     let spans = Array.from(textElement.children);
     if (spans.length !== word.length) {
         textElement.innerHTML = "";
-        word.split("").forEach(letter => {
+        word.split("").forEach((letter, i) => {
             let span = document.createElement("span");
             span.textContent = letter;
             textElement.appendChild(span);
@@ -24,14 +24,19 @@ function glitchEffect(word, duration = 1000) {
         const elapsed = Date.now() - startTime;
 
         spans.forEach((span, i) => {
-            if (Math.random() > 0.3 || elapsed > duration) {
+            // Ritardo per ogni lettera in base alla posizione
+            const delay = i * 100;
+
+            if (Math.random() > 0.3 || elapsed > (duration + delay)) {
                 span.textContent = word[i];
             } else {
                 span.textContent = getRandomChar();
             }
         });
 
-        if (elapsed > duration) clearInterval(interval);
+        if (elapsed > duration + (word.length * 100)) {
+            clearInterval(interval); // Ferma il glitch dopo la durata
+        }
     }, 50);
 }
 
@@ -40,5 +45,5 @@ function startGlitchEffect() {
     index++;
 }
 
-setInterval(startGlitchEffect, 2500);
+setInterval(startGlitchEffect, 3000);
 startGlitchEffect();

@@ -3,9 +3,11 @@ const CACHE_NAME = 'hermetica-cache-v2'; // Cambia questo ogni volta che aggiorn
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
-  '/Frame.svg',
-  '/style.css',
-  '/hermetica.js'
+  '/css/style.css',
+  '/hermetica.js',
+  '/media/icon-full.png',
+  '/media/icon.png',
+  '/media/consolas.ttf'
 ];
 
 // INSTALL: Cache iniziale

@@ -3,8 +3,8 @@
  * Implementazione per server-side con npm crypto
  */
 
-const crypto = require("crypto");
-const fs = require('fs');
+import crypto from crypto;
+import fs from fs;
 
 class NodeRSA {
   constructor() {
@@ -357,7 +357,7 @@ async function demo() {
 
     // Test crittografia semplice
     console.log("\n=== TEST CRITTOGRAFIA ===");
-    const message = "Messaggio segreto con RSA e Node.js crypto! 🔐";
+    const message = "Messaggio segreto con RSA e Node.js crypto!";
     console.log(`Messaggio originale: "${message}"`);
 
     const encrypted = rsa.encrypt(message);

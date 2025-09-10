@@ -7,10 +7,34 @@
 
         <title>Ηερμετικα</title>
         <link rel="icon" type="image/x-icon" href="Frame.svg">
+        <link rel="manifest" href="/manifest.json" />
         <link rel="stylesheet" href="style.css">
 
         <script src = "animation.js" defer></script>
         <script src = "hermetica.js" defer></script>
+        
+        <script>
+            if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js').then(registration => {
+                registration.update(); // Forza il controllo di update
+
+                registration.onupdatefound = () => {
+                    const newWorker = registration.installing;
+
+                    newWorker.onstatechange = () => {
+                    if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                        // 🔁 Auto-reload quando il nuovo SW è pronto
+                        window.location.reload();
+                        // Oppure mostra un messaggio personalizzato
+                    }
+                    };
+                };
+                });
+            });
+            }
+        </script>
+        
     </head>
 
     <body>

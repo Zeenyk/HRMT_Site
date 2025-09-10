@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "animation.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,9 +13,15 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
+  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/Zeenyk/HRMT_Site/issues"
   },
-  "homepage": "https://github.com/Zeenyk/HRMT_Site#readme"
+  "homepage": "https://github.com/Zeenyk/HRMT_Site#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "crypto": "^1.0.1",
+    "express": "^5.1.0",
+    "fs": "^0.0.1-security"
+  }
 }

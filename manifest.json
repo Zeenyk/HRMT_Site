@@ -8,9 +8,9 @@
     "orientation": "portrait",
     "icons": [
       {
-        "src": "Frame.svg",
+        "src": "media/icon.png",
         "sizes": "512x512",
-        "type": "image/svg",
+        "type": "image/png",
         "purpose": "any maskable"
       }
     ],

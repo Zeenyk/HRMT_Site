@@ -27,8 +27,9 @@ function glitchEffect(word, duration = 1000) {
             // Ritardo per ogni lettera in base alla posizione
             const delay = i * 100;
 
-            if (Math.random() > 0.3 || elapsed > (duration + delay)) {
+            if ( elapsed > (duration + delay)) {
                 span.textContent = word[i];
+                    
             } else {
                 span.textContent = getRandomChar();
             }
@@ -37,7 +38,7 @@ function glitchEffect(word, duration = 1000) {
         if (elapsed > duration + (word.length * 100)) {
             clearInterval(interval); // Ferma il glitch dopo la durata
         }
-    }, 50);
+    }, 5);
 }
 
 function startGlitchEffect() {

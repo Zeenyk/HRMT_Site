@@ -1,9 +1,40 @@
+//SERVICE WORKER LOADER
+            if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js').then(registration => {
+                registration.update(); // Forza il controllo di update
+
+                registration.onupdatefound = () => {
+                    const newWorker = registration.installing;
+
+                    newWorker.onstatechange = () => {
+                    if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                        // 🔁 Auto-reload quando il nuovo SW è pronto
+                        window.location.reload();
+                        // Oppure mostra un messaggio personalizzato
+                    }
+                    };
+                };
+                });
+            });
+            }
+
+
+
+
+
+
+
+
+
+
+//ANIMATION
 const textElement = document.querySelector('.title');
 const words = ["Ηερμετικα", "Hermetica"];
 let index = 0;
 
 function getRandomChar() {
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     return chars[Math.floor(Math.random() * chars.length)];
 }
 

@@ -3,41 +3,19 @@
 <html lang = "it">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>Ηερμετικα</title>
         <link rel="icon" type="image/x-icon" href="media/icon.png">
         <link rel="manifest" href="/manifest.json" />
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style.css?v1.0">
 
-        <script src = "hermetica.js" defer></script>
-        
-        <script>
-            if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js').then(registration => {
-                registration.update(); // Forza il controllo di update
-
-                registration.onupdatefound = () => {
-                    const newWorker = registration.installing;
-
-                    newWorker.onstatechange = () => {
-                    if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                        // 🔁 Auto-reload quando il nuovo SW è pronto
-                        window.location.reload();
-                        // Oppure mostra un messaggio personalizzato
-                    }
-                    };
-                };
-                });
-            });
-            }
-        </script>
+        <script src = "logic.js" defer></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    </head>
         
     </head>
 
     <body>
-               
         
     </body>
 </html>
